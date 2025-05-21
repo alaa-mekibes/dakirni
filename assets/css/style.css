@@ -1,0 +1,189 @@
+:root {
+    --mainBg: #004643;
+    --boxBg: #e8e4e664;
+    --headerBg: #004643c7;
+    --headingColor: #fffffe;
+    --paragraphColor: #abd1c6;
+    --btnColor: #f9bc60;
+    --sectionPdding: 1rem 2rem;
+    --transition: .2s;
+}
+::selection {
+    color: #ffffff;
+    background: #f9bc60;
+}
+html {
+    line-height: 1.6;
+}
+body {
+    font-family: 'Alnaqaaa R';
+    text-align: right;
+    direction: rtl;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to top, var(--mainBg), #00464332), url(../img/masjid.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    min-height: 100vh;
+}
+/* Font */
+@font-face {
+        font-family: 'Alnaqaaa R';
+        src: url(../webfonts/Alnaqaaa\ R.ttf) format(truetype);
+}
+/* Start Header */
+#header_container {
+    background-color: var(--headerBg);
+    color: var(--headingColor);
+    padding: var(--sectionPdding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+#header_container .logo {
+    font-size: 2rem;
+    a {
+        color: inherit;
+    }
+}
+#header_container .darkModeScitcher i {
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid;
+    color: white;
+    font-size: 1.25rem;
+    transition: var(--transition);
+    &:hover {
+        color: var(--btnColor);
+    }
+}
+/* Start main */
+#main_container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+#main_container .box {
+    width: 600px;
+    min-height: 500px;
+    background-color: var(--boxBg);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 2;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 30%;
+        height: 20px;
+        background-color: var(--boxBg);
+        left: 50%;
+        bottom: -20px;
+        transform: translateX(-50%);
+        border-radius: 0 0 5px 5px;
+    }
+}
+#main_container .box h2 {
+    font-size: 3rem;
+    font-weight: 500;
+    border-bottom: 1px solid #ccc;
+}
+#main_container .box p {
+    font-size: 2rem;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: -.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        height: 2px;
+        background-color: #cccccc6c;
+
+    }
+}
+#main_container .box span {
+    font-size: 1.25rem;
+}
+#main_container .box .arrow {
+    position: absolute;
+    bottom: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    &:hover {
+        color: var(--btnColor);
+    }
+}
+#main_container .box .arrow-left {
+    left: 1.5rem;
+}
+#main_container .box .arrow-right {
+    right: 1.5rem;
+}
+#main_container .dots {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    gap: 15px;
+    position: relative;
+    z-index: 2;
+}
+#main_container .dots span {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    background-color: var(--paragraphColor);
+    border-radius: 50%;
+    transition: var(--transition);
+
+}
+#main_container .dots span:hover, #main_container .dots .active {
+    background-color: var(--btnColor);
+    scale: 1.2;
+}
+#main_container .dots .active {
+    cursor: auto;
+}
+/* Start Footer */
+#footer_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--sectionPdding);
+    color: var(--paragraphColor);
+}
+#footer_container p {
+    font-size: 1.5rem;
+    transition: var(--transition);
+    user-select: none;
+    a {
+        color: inherit;
+    }
+    &:hover {
+        color: var(--btnColor)
+    }
+}
+/* Dark Mode */
+.dark-mode {
+    --boxBg: #403a3d64;
+    --mainBg: #001e1d;
+    --headerBg: #001e1d;
+}
