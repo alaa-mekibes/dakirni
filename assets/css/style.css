@@ -74,7 +74,7 @@ body {
     margin: 1rem;
 }
 #main_container .box {
-    width: 600px;
+    max-width: 600px;
     min-height: 500px;
     background-color: var(--boxBg);
     color: #fff;
