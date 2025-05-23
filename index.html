@@ -32,9 +32,8 @@
 <body dir="rtl">
     <header id="header_container">
             <h1 class="logo"><a href="">ذكرني</a></h1>
-        <div class="darkModeScitcher">
-            <span><i title="الوضع الداكن" class="fa-solid fa-moon"></i></span>
-        </div>
+        <button title="الوضع الداكن" aria-label="تبديل الوضع الى الداكن" class="darkModeScitcher">
+            <i aria-hidden="true" class="fa-solid fa-moon"></i>
     </header>
     <main id="main_container">
         <div class="slider">
@@ -42,14 +41,14 @@
             <h2 class="adkar-type"></h2>
             <p class="dikr-text">يرجى قبول تحديد الموقع أو الإنتظار قليلا لتحميل الموارد</p>
             <span class="dikr-src"></span>
-            <i class="arrow arrow-left fa-2x fa-regular fa-circle-left"></i>
-            <i class="arrow arrow-right fa-2x fa-regular fa-circle-right"></i>
+            <button class="arrow arrow-left"><i class="fa-2x fa-regular fa-circle-left"></i></button>
+            <button class="arrow arrow-right"><i class="fa-2x fa-regular fa-circle-right"></i></button>
         </div>
 
         <div class="dots">
-            <span class="dot active" attr="0"></span>
-            <span class="dot" attr="1"></span>
-            <span class="dot" attr="2"></span>
+            <button class="dot active" attr="0"></button>
+            <button class="dot" attr="1"></button>
+            <button class="dot" attr="2"></button>
         </div>
         </div>
     </main>

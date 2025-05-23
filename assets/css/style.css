@@ -48,6 +48,10 @@ body {
         color: inherit;
     }
 }
+#header_container .darkModeScitcher {
+    background-color: transparent;
+    border: none;
+}
 #header_container .darkModeScitcher i {
     cursor: pointer;
     display: inline-flex;
@@ -146,7 +150,7 @@ body {
     position: relative;
     z-index: 2;
 }
-#main_container .dots span {
+#main_container .dots button {
     cursor: pointer;
     width: 15px;
     height: 15px;
@@ -155,7 +159,7 @@ body {
     transition: var(--transition);
 
 }
-#main_container .dots span:hover, #main_container .dots .active {
+#main_container .dots button:hover, #main_container .dots .active {
     background-color: var(--btnColor);
     scale: 1.2;
 }

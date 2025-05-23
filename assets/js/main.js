@@ -10,6 +10,7 @@ class DarkLightMode {
             this.btnIcon.classList.remove("fa-moon");
             this.btnIcon.classList.add("fa-sun");
             this.btnIcon.title = "الوضع الفاتح";
+            this.btnIcon.ariaLabel = "تبديل الوضع الى الفاتح";
             this.root.classList.add("dark-mode");
         } 
     }
@@ -22,12 +23,14 @@ class DarkLightMode {
             this.btnIcon.classList.remove("fa-moon");
             this.btnIcon.classList.add("fa-sun");
             this.btnIcon.title = "الوضع الفاتح";
+            this.btnIcon.ariaLabel = "تبديل الوضع الى الفاتح";
             localStorage.setItem("darkMode", "isDark");
         }
         else {
             this.btnIcon.classList.remove("fa-sun");
             this.btnIcon.classList.add("fa-moon");
             this.btnIcon.title = "الوضع الداكن";
+            this.btnIcon.ariaLabel = "تبديل الوضع الى الداكن";
             localStorage.setItem("darkMode", "isNotDark");
         } 
     }
