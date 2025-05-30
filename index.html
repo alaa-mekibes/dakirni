@@ -30,29 +30,27 @@
     <title>ذكرني حسب الوقت</title>
 </head>
 <body dir="rtl">
-    <header id="header_container">
-            <h1 class="logo"><a href="">ذكرني</a></h1>
-        <button title="الوضع الداكن" aria-label="تبديل الوضع الى الداكن" class="darkModeScitcher">
-            <i aria-hidden="true" class="fa-solid fa-moon"></i>
+    <header class="header">
+        <h1 class="header__logo"><a href="">ذكرني</a></h1>
+        <button title="الوضع الداكن" aria-label="تبديل الوضع الى الداكن" class="header__darkModeScitcher"><i aria-hidden="true" class="fa-solid fa-moon"></i></button>
     </header>
-    <main id="main_container">
+    <main class="main">
         <div class="slider">
-        <div class="box">
-            <h2 class="adkar-type"></h2>
-            <p class="dikr-text">يرجى قبول تحديد الموقع أو الإنتظار قليلا لتحميل الموارد</p>
-            <span class="dikr-src"></span>
-            <button class="arrow arrow-left"><i class="fa-2x fa-regular fa-circle-left"></i></button>
-            <button class="arrow arrow-right"><i class="fa-2x fa-regular fa-circle-right"></i></button>
-        </div>
-
+        <article class="box">
+            <h2 class="box__adkar-type"></h2>
+            <p class="box__dikr-text">يرجى قبول تحديد الموقع أو الإنتظار قليلا لتحميل الموارد</p>
+            <span class="box__dikr-src"></span>
+            <button class="arrow arrow--left"><i class="fa-2x fa-regular fa-circle-left"></i></button>
+            <button class="arrow arrow--right"><i class="fa-2x fa-regular fa-circle-right"></i></button>
+        </article>
         <div class="dots">
-            <button class="dot active" attr="0"></button>
-            <button class="dot" attr="1"></button>
-            <button class="dot" attr="2"></button>
+            <button class="dots__dot dots__dot--active" attr="0"></button>
+            <button class="dots__dot" attr="1"></button>
+            <button class="dots__dot" attr="2"></button>
         </div>
         </div>
     </main>
-    <footer id="footer_container">
+    <footer class="footer">
         <p><a href="https://github.com/alaa-mekibes/dakirni?tab=readme-ov-file#المصادر">المصادر</a></p>
     </footer>
     <script src="assets/js/main.js"></script>

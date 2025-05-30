@@ -1,8 +1,8 @@
 class DarkLightMode {
     constructor() {
         this.root = document.documentElement;
-        this.switcherBtn = document.querySelector(".darkModeScitcher");
-        this.btnIcon = document.querySelector(".darkModeScitcher i");
+        this.switcherBtn = document.querySelector(".header__darkModeScitcher");
+        this.btnIcon = document.querySelector(".header__darkModeScitcher i");
     }
 
     verifyLastMode() {
@@ -81,8 +81,8 @@ class SlideShow {
         this.currentSlide = 0;
         this.fetchData();
         this.slides;
-        this.dikrText = document.querySelector(".dikr-text");
-        this.dikrSrc = document.querySelector(".dikr-src");
+        this.dikrText = document.querySelector(".box__dikr-text");
+        this.dikrSrc = document.querySelector(".box__dikr-src");
     }
 
     async fetchData() {
@@ -100,18 +100,18 @@ class SlideShow {
             case "night": cat = "أذكار النوم"; break; 
             default: cat = "حدث خطأ";
         }
-        document.querySelector(".adkar-type").textContent = cat;
+        document.querySelector(".box__adkar-type").textContent = cat;
         this.dikrText.textContent = this.slides[this.currentSlide].text;
         this.dikrSrc.textContent = this.slides[this.currentSlide].src;
     }
 
     clickArrow() {
-        document.querySelector(".arrow-left").addEventListener("click", _ => this.switchSlidesLeft());
-        document.querySelector(".arrow-right").addEventListener("click", _ => this.switchSlidesRight());
-        document.querySelectorAll(".dot").forEach(dot => {
+        document.querySelector(".arrow--left").addEventListener("click", _ => this.switchSlidesLeft());
+        document.querySelector(".arrow--right").addEventListener("click", _ => this.switchSlidesRight());
+        document.querySelectorAll(".dots__dot").forEach(dot => {
             dot.addEventListener("click", e => { 
-                if(e.currentTarget.classList.contains("active")) return;
-                document.querySelectorAll(".dot").forEach(dot => dot.classList.remove("active"));
+                if(e.currentTarget.classList.contains("dots__dot--active")) return;
+                document.querySelectorAll(".dots__dot").forEach(dot => dot.classList.remove("dots__dot--active"));
                 this.switchSlide(e)});
         });
     }
@@ -119,21 +119,21 @@ class SlideShow {
     switchSlidesLeft() {
         if(this.currentSlide >= 2) return;
         this.currentSlide++;
-        document.querySelectorAll(".dot").forEach(dot => dot.classList.remove("active"));
-        document.querySelectorAll(".dot")[this.currentSlide].classList.add("active");
+        document.querySelectorAll(".dots__dot").forEach(dot => dot.classList.remove("dots__dot--active"));
+        document.querySelectorAll(".dots__dot")[this.currentSlide].classList.add("dots__dot--active");
         this.dikrText.textContent = this.slides[this.currentSlide].text;
         this.dikrSrc.textContent = this.slides[this.currentSlide].src;
     }
     switchSlidesRight() {
         if(this.currentSlide <= 0) return;
         this.currentSlide--;
-        document.querySelectorAll(".dot").forEach(dot => dot.classList.remove("active"));
-        document.querySelectorAll(".dot")[this.currentSlide].classList.add("active");
+        document.querySelectorAll(".dots__dot").forEach(dot => dot.classList.remove("dots__dot--active"));
+        document.querySelectorAll(".dots__dot")[this.currentSlide].classList.add("dots__dot--active");
         this.dikrText.textContent = this.slides[this.currentSlide].text;
         this.dikrSrc.textContent = this.slides[this.currentSlide].src;
     }
     switchSlide(e) {
-        e.currentTarget.classList.add("active");
+        e.currentTarget.classList.add("dots__dot--active");
         this.dikrText.textContent = this.slides[e.currentTarget.getAttribute("attr")].text;
         this.dikrSrc.textContent = this.slides[e.currentTarget.getAttribute("attr")].src;
         this.currentSlide = e.currentTarget.getAttribute("attr");
